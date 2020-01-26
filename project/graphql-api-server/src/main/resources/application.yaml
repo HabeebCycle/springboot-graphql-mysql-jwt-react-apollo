@@ -1,15 +1,3 @@
-## Hibernate Logging
-logging:
-    level:
-        org:
-            hibernate:
-                SQL: DEBUG
-
-## App Properties
-app:
-    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
-    tokenExpirationInMs: 86400000 # 1 day expiration time
-
 ## Server Properties
 server:
     port: 5100
