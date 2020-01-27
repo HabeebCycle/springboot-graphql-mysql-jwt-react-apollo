@@ -25,5 +25,21 @@ public class MutationResolver implements GraphQLMutationResolver {
         return dataService.addAuthor(name, age);
     }
 
+    public Book updateBook(Long id, String name, String genre, Long author){
+        return dataService.updateBook(id, name, genre, author);
+    }
+
+    public Author updateAuthor(Long id, String name, int age){
+        return dataService.updateAuthor(id, name, age);
+    }
+
+    public Book deleteBook(Long id){
+        return dataService.deleteBook(id);
+    }
+
+    public Author deleteAuthor(Long id){
+        return dataService.deleteAuthor(id);
+    }
+
 
 }

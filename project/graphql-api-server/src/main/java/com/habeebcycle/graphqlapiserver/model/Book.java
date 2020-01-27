@@ -13,7 +13,7 @@ public class Book {
     private String name;
     private String genre;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 

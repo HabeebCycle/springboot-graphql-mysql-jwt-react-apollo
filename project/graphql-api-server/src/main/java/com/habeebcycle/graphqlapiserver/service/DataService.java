@@ -58,4 +58,34 @@ public class DataService {
         author.setAge(age);
         return authorRepository.save(author);
     }
+
+    public Book updateBook(Long id, String name, String genre, Long author){
+        Author bookAuthor = getAuthor(author);
+        Book book = getBook(id);
+        book.setName(name);
+        book.setGenre(genre);
+        book.setAuthor(bookAuthor);
+        return bookRepository.save(book);
+    }
+
+    public Author updateAuthor(Long id, String name, int age){
+        Author author = getAuthor(id);
+        author.setName(name);
+        author.setAge(age);
+        return authorRepository.save(author);
+    }
+
+    public Book deleteBook(Long id){
+        Book book = getBook(id);
+        bookRepository.delete(book);
+        return book;
+    }
+
+    public Author deleteAuthor(Long id){
+        Author author = getAuthor(id);
+        List<Book> books = author.getBooks();
+        //bookRepository.deleteAll(books);
+        authorRepository.delete(author);
+        return author;
+    }
 }
