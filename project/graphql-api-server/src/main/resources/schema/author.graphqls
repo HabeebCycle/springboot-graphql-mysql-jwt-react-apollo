@@ -1,3 +1,5 @@
+# Author query type
+
 type Author {
   id: ID,
   name: String,

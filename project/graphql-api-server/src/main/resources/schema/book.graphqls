@@ -1,3 +1,4 @@
+# Book query type
 type Book {
   id: ID,
   name: String,
