@@ -12,7 +12,7 @@
     <artifactId>graphql-api-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>graphql-api-server</name>
-    <description>Building API backend server and frontend client using Spring Boot, GraphQL, MySQL, React and Redux
+    <description>Building API backend server and frontend client using Spring Boot, GraphQL, MySQL, JWT, React and Redux
         and Apollo client for graphql
     </description>
 
@@ -25,10 +25,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency> -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -41,28 +38,12 @@
             <optional>true</optional>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
-        <!-- <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.9.1</version>
-        </dependency> -->
-
-        <!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-java-tools -->
-        <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-java-tools</artifactId>
-            <version>5.2.4</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-spring-boot-starter -->
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-spring-boot-starter</artifactId>
             <version>5.0.2</version>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/com.graphql-java/graphiql-spring-boot-starter -->
         <dependency>
@@ -71,16 +52,25 @@
             <version>5.0.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-java-tools -->
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java-tools</artifactId>
+            <version>5.2.4</version>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!-- <dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency> -->
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -92,11 +82,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency> -->
     </dependencies>
 
     <build>
