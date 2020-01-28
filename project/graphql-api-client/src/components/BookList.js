@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getBooksQuery } from "../queries/queries";
+import { getBooksQuery } from "../schema/queries";
 import { useQuery } from "@apollo/react-hooks";
 
 import BookDetails from "./BookDetails";

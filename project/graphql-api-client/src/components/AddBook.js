@@ -3,7 +3,7 @@ import {
 	getAuthorsQuery,
 	addBookMutation,
 	getBooksQuery
-} from "../queries/queries";
+} from "../schema/queries";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 
 const AddBook = () => {
