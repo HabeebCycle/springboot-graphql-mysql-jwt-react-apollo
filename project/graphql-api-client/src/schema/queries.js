@@ -1,12 +1,11 @@
 import { gql } from "apollo-boost";
 
-
 export const getAuthorsQuery = gql`
 	{
 		authors {
 			id
-            name
-            age
+			name
+			age
 		}
 	}
 `;
@@ -21,16 +20,16 @@ export const getBooksQuery = gql`
 `;
 
 export const getBookQuery = gql`
-	query($bookId: ID!){
+	query($bookId: ID!) {
 		book(id: $bookId) {
 			id
 			name
 			genre
-			author{
+			author {
 				id
 				name
 				age
-				books{
+				books {
 					id
 					name
 					genre
@@ -41,12 +40,12 @@ export const getBookQuery = gql`
 `;
 
 export const getAuthorQuery = gql`
-	query($authorId: ID!){
+	query($authorId: ID!) {
 		author(id: $authorId) {
 			id
 			name
 			age
-			books{
+			books {
 				id
 				name
 				genre
@@ -55,81 +54,83 @@ export const getAuthorQuery = gql`
 	}
 `;
 
-
-
-
 export const addBookMutation = gql`
-	mutation addBook($name: String!, $genre: String, $authorId: ID!){
+	mutation addBook($name: String!, $genre: String, $authorId: ID!) {
 		addBook(name: $name, genre: $genre, authorId: $authorId) {
 			id
-            name
-            genre
-            author{
-                id
-                name
-                age
-                books{
-                    id
-                    name
-                    genre
-                }
-            }
+			name
+			genre
+			author {
+				id
+				name
+				age
+				books {
+					id
+					name
+					genre
+				}
+			}
 		}
 	}
 `;
 
 export const addAuthorMutation = gql`
-	mutation addAuthor($name: String!, $age: Int){
+	mutation addAuthor($name: String!, $age: Int) {
 		addAuthor(name: $name, age: $age) {
 			id
-            name
-            age
-            books{
-                id
-                name
-                genre
-            }
+			name
+			age
+			books {
+				id
+				name
+				genre
+			}
 		}
 	}
 `;
 
 export const updateBookMutation = gql`
-	mutation updateBook($bookId: ID!, $name: String!, $genre: String, $authorId: ID!){
+	mutation updateBook(
+		$bookId: ID!
+		$name: String!
+		$genre: String
+		$authorId: ID!
+	) {
 		updateBook(id: $bookId, name: $name, genre: $genre, authorId: $authorId) {
 			id
-            name
-            genre
-            author{
-                id
-                name
-                age
-                books{
-                    id
-                    name
-                    genre
-                }
-            }
+			name
+			genre
+			author {
+				id
+				name
+				age
+				books {
+					id
+					name
+					genre
+				}
+			}
 		}
 	}
 `;
 
 export const updateAuthorMutation = gql`
-	mutation updateAuthor($authorId: ID!, $name: String!, $age: Int){
+	mutation updateAuthor($authorId: ID!, $name: String!, $age: Int) {
 		addAuthor(id: $authorId, name: $name, age: $age) {
 			id
-            name
-            age
-            books{
-                id
-                name
-                genre
-            }
+			name
+			age
+			books {
+				id
+				name
+				genre
+			}
 		}
 	}
 `;
 
 export const deleteBookMutation = gql`
-	mutation deleteBook($bookId: ID!){
+	mutation deleteBook($bookId: ID!) {
 		deleteBook(id: $bookId) {
 			id
 		}
@@ -137,7 +138,7 @@ export const deleteBookMutation = gql`
 `;
 
 export const deleteAuthorMutation = gql`
-	mutation deleteAuthor($authorId: ID!){
+	mutation deleteAuthor($authorId: ID!) {
 		deleteAuthor(id: $authorId) {
 			id
 		}
